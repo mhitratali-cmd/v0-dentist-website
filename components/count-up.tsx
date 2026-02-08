@@ -12,7 +12,7 @@ interface CountUpProps {
 
 export function CountUp({ to, duration = 2, suffix = "", className = "" }: CountUpProps) {
     const ref = useRef<HTMLSpanElement>(null)
-    const isInView = useInView(ref, { once: true, margin: "-100px" })
+    const isInView = useInView(ref, { once: true, amount: 0.1 })
     const count = useMotionValue(0)
     const spring = useSpring(count, { duration: duration * 1000, bounce: 0 })
     const [displayValue, setDisplayValue] = useState(0)
