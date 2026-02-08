@@ -26,7 +26,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-background/90 backdrop-blur-md shadow-sm py-3"
+          ? "bg-background/80 backdrop-blur-md shadow-sm py-3 border-b border-white/10"
           : "bg-transparent py-5"
       )}
     >
@@ -49,7 +49,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-primary"
+              className="text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-105"
             >
               {link.label}
             </a>

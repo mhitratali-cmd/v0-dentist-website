@@ -15,7 +15,7 @@ export function ContactCTA() {
                 Get in Touch
               </p>
               <h2 className="mt-3 font-serif text-3xl font-bold text-foreground md:text-4xl text-balance">
-                Ready to transform your smile?
+                Ready to transform <span className="gold-gradient">your smile?</span>
               </h2>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                 Fill out the form below and our team will reach out within 24
@@ -88,10 +88,10 @@ export function ContactCTA() {
                 </div>
                 <button
                   type="submit"
-                  className="group mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all duration-300 hover:opacity-90 animate-pulse-glow"
+                  className="group mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 animate-pulse-glow"
                 >
                   Request Appointment
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </form>
             </div>

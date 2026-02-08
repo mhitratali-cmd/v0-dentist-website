@@ -2,6 +2,7 @@
 
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { Award, Users, Leaf, ShieldCheck } from "lucide-react"
+import { CountUp } from "@/components/count-up"
 
 const values = [
   {
@@ -42,8 +43,10 @@ export function About() {
                 />
               </div>
               {/* Floating card overlay */}
-              <div className="absolute -bottom-6 -right-4 rounded-2xl border border-border bg-card p-5 shadow-xl md:-right-8">
-                <p className="font-serif text-3xl font-bold text-primary">15+</p>
+              <div className="absolute -bottom-6 -right-4 rounded-2xl border border-border bg-card/80 backdrop-blur-md p-5 shadow-xl md:-right-8">
+                <p className="font-serif text-3xl font-bold text-primary">
+                  <CountUp to={15} suffix="+" />
+                </p>
                 <p className="text-sm font-medium text-muted-foreground">
                   Years of trusted care
                 </p>
@@ -60,7 +63,7 @@ export function About() {
               <h2 className="mt-3 font-serif text-4xl font-bold text-foreground md:text-5xl text-balance">
                 Where science meets
                 <br className="hidden sm:block" />
-                genuine compassion
+                <span className="gold-gradient">genuine compassion</span>
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
                 Founded with a vision to redefine dental care, Luminance Dental

@@ -1,6 +1,7 @@
 "use client"
 
 import { ArrowRight, Star } from "lucide-react"
+import { CountUp } from "@/components/count-up"
 
 export function Hero() {
   return (
@@ -14,7 +15,7 @@ export function Hero() {
 
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 pt-24 pb-16 text-center">
         {/* Trust badge */}
-        <div className="animate-fade-in mb-8 flex items-center gap-2 rounded-full border border-border bg-card/80 backdrop-blur-sm px-5 py-2.5">
+        <div className="animate-fade-in animate-shimmer mb-8 flex items-center gap-2 rounded-full border border-border bg-card/80 backdrop-blur-md px-5 py-2.5 shadow-sm">
           <div className="flex -space-x-0.5">
             {[...Array(5)].map((_, i) => (
               <Star
@@ -32,7 +33,7 @@ export function Hero() {
         <h1 className="animate-fade-in-up font-serif text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl text-balance">
           Your smile deserves
           <br />
-          <span className="text-primary">exceptional care</span>
+          <span className="gold-gradient">exceptional care</span>
         </h1>
 
         {/* Subheading */}
@@ -51,14 +52,14 @@ export function Hero() {
         >
           <a
             href="#contact"
-            className="group flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all duration-300 hover:gap-3 hover:opacity-90 animate-pulse-glow"
+            className="group flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/20 animate-pulse-glow"
           >
             Book Your Visit
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
           <a
             href="#services"
-            className="rounded-full border border-border bg-card/60 backdrop-blur-sm px-8 py-4 text-base font-semibold text-foreground transition-all duration-300 hover:bg-card"
+            className="flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur-md px-8 py-4 text-base font-semibold text-foreground transition-all duration-300 hover:bg-card hover:scale-105 hover:shadow-lg"
           >
             Explore Services
           </a>
@@ -70,13 +71,13 @@ export function Hero() {
           style={{ animationDelay: "0.45s" }}
         >
           {[
-            { value: "15+", label: "Years Experience" },
-            { value: "2,000+", label: "Happy Patients" },
-            { value: "98%", label: "Satisfaction Rate" },
+            { value: 15, suffix: "+", label: "Years Experience" },
+            { value: 2000, suffix: "+", label: "Happy Patients" },
+            { value: 98, suffix: "%", label: "Satisfaction Rate" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-serif text-3xl font-bold text-primary md:text-4xl">
-                {stat.value}
+                <CountUp to={stat.value} suffix={stat.suffix} />
               </p>
               <p className="mt-1 text-xs font-medium uppercase tracking-wider text-muted-foreground md:text-sm">
                 {stat.label}
